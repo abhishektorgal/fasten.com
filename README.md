@@ -1,1 +1,1 @@
-# clamp.com
+# clampconnects.com
