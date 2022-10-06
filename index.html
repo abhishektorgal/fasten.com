@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  </html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=ideo, initial-scale=1.0">
-    <title> www.Fasten.com</title>
+    <title>www.fasten.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-  <nav>
-    <a href=ideol.html><img src="img/logo.jpg" width="120px" hight="10px"class="logo"alt="" class="logo"></a>
-    <div class="header-right">
+ <nav>
+  
+    <a href=><img src="img/logo.jpg" width="120px" hight="10px"class="logo"alt="" class="logo"style="max-width:100%;height:auto"></a>
+    <div class="header-right"><meta name="viewport" content="width=device-width, initial-scale=1.0">
      <ul>
-      <li><a href="">Search tab</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="cart.html">Cart</a></li>
-    </ul>
-    </div>
-    <hr>
-  </nav>
-  
-  
+      <li><a href="ideol.html">Explore</a></li>
+     
+    <li><a href=><img src="img/cart.png" width="25px" hight="10px"class="logo"alt="" class="logo"style="max-width:100%;height:auto"></a></li>
+     </nav>
+    </head>
+    
 
+<div style="margin-top:0px;padding:15px 15px 2500px;font-size:30px">
   
-</div>
+  <p>h </p>
+
+  <div class="tab">
+    <a href="ideol.html"><button>Explore</button></a>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">About</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Contact</button>
+  </div>
+  
+  
+  <script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script>
+     
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+</script>
+
+     
+      
+
+
 </body>
-</html>  
+</html>
