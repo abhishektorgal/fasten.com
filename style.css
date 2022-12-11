@@ -486,7 +486,7 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(189, 189, 188);
+  background-color: rgb(0, 0, 0);
 }
 
 .dropdown-content {
@@ -550,7 +550,7 @@ body {
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: rgb(255, 179, 0);
+  background-color: #eee;
 }
 
 .subnav-content {
