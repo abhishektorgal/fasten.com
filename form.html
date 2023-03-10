@@ -1,157 +1,54 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
-        id="bootstrap-css" />
-    <style>
-        .register .nav-tabs .nav-link:hover {
-            border: none;
-        }
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-        .text-align {
-            margin-top: -3%;
-            margin-bottom: -9%;
+input[type=submit]:hover {
+  background-color: #45a049;
+}
 
-            padding: 10%;
-            margin-left: 30%;
-        }
-
-        .form-new {
-            margin-right: 22%;
-            margin-left: 20%;
-        }
-
-        .register-heading {
-            margin-left: 21%;
-            margin-bottom: 10%;
-            color: #e9ecef;
-        }
-
-        .register-heading h1 {
-            margin-left: 21%;
-            margin-bottom: 10%;
-            color: #e9ecef;
-        }
-
-        .register {
-            background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
-            margin-top: 3%;
-            padding: 3%;
-            border-radius: 2.5rem;
-        }
-
-        .btnSubmit {
-            width: 50%;
-            border-radius: 1rem;
-            padding: 1.5%;
-            color: #fff;
-            background-color: #03612e;
-            border: none;
-            cursor: pointer;
-            margin-right: 6%;
-            color: rgb(246, 246, 252);
-            margin-top: 4%;
-        }
-    </style>
-</head>
-
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
-    <div class="container register">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel"
-                    aria-labelledby="home-tab">
-                    <h3 class="register-heading text-nowrap">HTML Form to WhatsApp</h3>
-                    <div class="row register-form">
-                        <div class="col-md-12">
-                            <form autocomplete="off">
-                                <div class="form-group">
-                                    <input type="text" name="Name" id="name" class="form-control"
-                                        placeholder="Your Name *" value="" required="" />
-                                </div>
-                                 
 
-                                <div class="form-group">
-                                    <input type="number" name="Phone" id="phone" class="form-control"
-                                        placeholder="Phone Number *" value="" required="" />
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="text" name="Address1" id="Address1" class="form-control"
-                                        placeholder="Address1 *" value="" required="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="Address2" id="Address2" class="form-control"
-                                        placeholder="Address2 *" value="" required="" />
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="City" id="City" class="form-control"
-                                        placeholder="City *" value="" required="" />
-
-                                        
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="Landmark" id="Landmark" class="form-control"
-                                        placeholder="Landmark *" value="" required="" />
-
-                                        
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="State" id="State" class="form-control"
-                                        placeholder="State *" value="" required="" />
-
-                                        
-                                </div>
-                              
-                                
-                                <input type="number" name="Pin-Code" id="Pin-Code" class="form-control"
-                                        placeholder="Pin-Code *" value="" required="" />
-                                <div class="form-group">
-                                    <input type="button" name="submit" class="btnSubmit btn-block" onclick="gotowhatsapp()" value="Submit" />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        function gotowhatsapp() {
-
-            var name = document.getElementById("name").value;
-            var phone = document.getElementById("phone").value;
-            var Address1 = document.getElementById("Address1").value;
-            var Address2 = document.getElementById("Address2").value;
-
-            var City = document.getElementById("City").value;
-            var Landmark = document.getElementById("Landmark").value;
-            var State = document.getElementById("State").value;
-            var PinCode = document.getElementById("Pin-Code").value;
+<h3>Using CSS to style an HTML Form</h3>
 
 
-            var url = "https://wa.me/918789529215?text="
-                + "Name: " + name + "%0a"
-                + "Phone: " + phone + "%0a"
-                + "Address1: " + Address1 + "%0a"
-                + "Address2 " + Address2;
-                + "City: " + City + "%0a"
-                + "Landmark: " + Landmark + "%0a"
-                + "State: " + State + "%0a"
-                + "Pin-Code: " + Pin-Code;
+<form action="mailto:sanjeevtorgal690@gmail.com" method="post" enctype="text/plain">
+    Name:<br>
+    <input type="text" name="name"><br>
+    E-mail:<br>
+    <input type="text" name="mail"><br>
+    Comment:<br>
+    <input type="text" name="comment" size="50"><br><br>
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+    </form>
+    
 
-            window.open(url, '_blank').focus();
-        }
-    </script>
+
 </body>
-
 </html>
