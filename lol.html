@@ -72,46 +72,22 @@
                                     <input type="text" name="Name" id="name" class="form-control"
                                         placeholder="Your Name *" value="" required="" />
                                 </div>
-                                 
-
+                                <div class="form-group">
+                                    <input type="text" name="Email" id="email" class="form-control"
+                                        placeholder="Your Email *" value="" required="" />
+                                </div>
                                 <div class="form-group">
                                     <input type="number" name="Phone" id="phone" class="form-control"
-                                        placeholder="Phone Number *" value="" required="" />
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="text" name="Address1" id="Address1" class="form-control"
-                                        placeholder="Address1 *" value="" required="" />
+                                        placeholder="Your Contact Number *" value="" required="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="Address2" id="Address2" class="form-control"
-                                        placeholder="Address2 *" value="" required="" />
+                                    <select class="form-control" id="service">
+                                        <option>Default select</option>
+                                        <option>Website Development</option>
+                                        <option>Mobile App Development</option>
+                                        <option>Web and Mobile Application</option>
+                                    </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="City" id="City" class="form-control"
-                                        placeholder="City *" value="" required="" />
-
-                                        
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="Landmark" id="Landmark" class="form-control"
-                                        placeholder="Landmark *" value="" required="" />
-
-                                        
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="State" id="State" class="form-control"
-                                        placeholder="State *" value="" required="" />
-
-                                        
-                                </div>
-                              
-                                
-                                <input type="number" name="Pin-Code" id="Pin-Code" class="form-control"
-                                        placeholder="Pin-Code *" value="" required="" />
                                 <div class="form-group">
                                     <input type="button" name="submit" class="btnSubmit btn-block" onclick="gotowhatsapp()" value="Submit" />
                                 </div>
@@ -130,24 +106,14 @@
 
             var name = document.getElementById("name").value;
             var phone = document.getElementById("phone").value;
-            var Address1 = document.getElementById("Address1").value;
-            var Address2 = document.getElementById("Address2").value;
+            var email = document.getElementById("email").value;
+            var service = document.getElementById("service").value;
 
-            var City = document.getElementById("City").value;
-            var Landmark = document.getElementById("Landmark").value;
-            var State = document.getElementById("State").value;
-            var PinCode = document.getElementById("Pin-Code").value;
-
-
-            var url = "https://wa.me/918789529215?text="
+            var url = "https://wa.me/918600883425?text="
                 + "Name: " + name + "%0a"
                 + "Phone: " + phone + "%0a"
-                + "Address1: " + Address1 + "%0a"
-                + "Address2 " + Address2;
-                + "City: " + City + "%0a"
-                + "Landmark: " + Landmark + "%0a"
-                + "State: " + State + "%0a"
-                + "Pin-Code: " + Pin-Code;
+                + "Email: " + email + "%0a"
+                + "Service: " + service;
 
             window.open(url, '_blank').focus();
         }
