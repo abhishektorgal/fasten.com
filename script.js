@@ -41,6 +41,8 @@ function loadContent(){
 }
 
 
+
+
 //Remove Item
 function removeItem(){
   if(confirm('Are Your Sure to Remove')){
@@ -140,3 +142,5 @@ function updateTotal()
 
 
 }
+
+

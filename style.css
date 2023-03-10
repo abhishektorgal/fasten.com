@@ -110,25 +110,25 @@ transform: scale(1.5);
 .food-title{
   font-size: 1rem;
   font-weight: 600;
-  color:#ff6348;
+  color:#000000;
 }
 
 .food-price{
   font-weight:500 ;
 }
 
-.add-cart{
+
+.add-cart2{
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #2ed573;
+  background-color: #ff8400;
   color:white;
   padding: 10px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.s;
 }
-
   
 
 .cart{
@@ -189,7 +189,7 @@ transform: scale(1.5);
 .cart-food-title{
    font-size: 1rem;
    text-transform: uppercase;
-   color:#ff6348;
+   color:#000000;
    font-weight: 500;
 }
 
@@ -207,7 +207,7 @@ transform: scale(1.5);
 
 .cart-remove{
   font-size: 24px;
-  color:red;
+  color:rgb(255, 0, 0);
   cursor: pointer;
 }
 
@@ -253,153 +253,6 @@ main {
   flex: 1 0 auto;
 }
 
-h1.title,
-.footer-copyright a {
-  font-family: 'Architects Daughter', cursive;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-/* start welcome animation */
-
-body.welcome {
-  background: #512da8;
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-.welcome .splash {
-  height: 0px;
-  padding: 0px;
-  border: 130em solid #039be5;
-  position: fixed;
-  left: 50%;
-  top: 100%;
-  display: block;
-  box-sizing: initial;
-  overflow: hidden;
-
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-}
-
-.welcome #welcome {
-  background: #311b92 ;
-  width: 56px;
-  height: 56px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  overflow: hidden;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
-}
-   
-/* moveIn */
-.welcome header,
-.welcome a.btn {
-  opacity: 0;
-  animation: moveIn 2s 3.1s ease forwards;
-}
-
-@keyframes init {
-  0% {
-    width: 0px;
-    height: 0px;
-  }
-  100% {
-    width: 56px;
-    height: 56px;
-    margin-top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes puff {
-  0% {
-    top: 100%;
-    height: 0px;
-    padding: 0px;
-  }
-  100% {
-    top: 50%;
-    height: 100%;
-    padding: 0px 100%;
-  }
-}
-
-@keyframes borderRadius {
-  0% {
-    border-radius: 50%;
-  }
-  100% {
-    border-radius: 0px;
-  }
-}
-
-@keyframes moveDown {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes moveUp {
-  0% {
-    background: #311b92;
-    top: 100%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 50%;
-    background: #039be5;
-  }
-}
-
-@keyframes materia {
-  0% {
-    background: #039be5;
-  }
-  50% {
-    background: #039be5;
-    top: 26px;
-  }
-  100% {
-    background: #311b92;
-    width: 100%;
-    height: 64px;
-    border-radius: 0px;
-    top: 26px;
-  }
-}
-
-@keyframes moveIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-} 
 
         div.scrollmenu {
           background-color: rgb(255, 255, 255);
@@ -438,10 +291,184 @@ body.welcome {
               display:none;}
              }
            
+         
+
+
+                
              @media only screen and (max-width:500px) {
-              .shop-content{
+              .cart{ width: 300px;
                  
-                display:none;}
+                }
                }
-             
-            
+               
+               /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(0, 0, 0);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255); 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: rgb(255, 255, 255);
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: rgb(187, 194, 237);
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: rgb(170, 179, 241);
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 35px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #000000;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  font-size: 40px;
+  margin-left: 5px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 1px;
+}
+
+.h1{
+  padding: 25px;
+}
