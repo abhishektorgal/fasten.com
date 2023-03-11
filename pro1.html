@@ -175,7 +175,69 @@
       </table>
     </div>
 
-    <a href="form.html"> <input herf="./form.html"  type="button" value="Buy Now"style="background-color:darkblue;color:white;width:150px;height:40px;font-size: 17px;"></a>
+    
+    <button onclick="openPopup()"style="background-color:darkblue;color:white;width:150px;height:40px;font-size: 17px;">Buy Now</button>
+
+    <!-- The pop-up -->
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h3>Buy Now </h3>
+        <br>
+        <form name="myForm" action="mailto:sanjeevtorgal690@gmail.com" onsubmit="return validateForm()" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+          <br>
+      
+          <label for="phone">Phone:</label>
+          <input type="number" id="phone" name="phone"><br>
+          <br>
+      
+      
+          <label for="pincode">pin-code:</label>
+          <input type="number" id="pincode" name="pincode"><br>
+          <br>
+      
+      
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address"><br>
+          <br>
+      
+          <label for="address2">Address2:</label>
+          <input type="text" id="address2" name="address2"><br>
+          <br>
+      
+          <label for="city">city:</label>
+          <input type="text" id="city" name="city"><br>
+          <br>
+      
+          <label for="landmark">landmark:</label>
+          <input type="text" id="landmark" name="landmark"><br>
+          <br>
+      
+          <label for="state">state:</label>
+          <input type="text" id="state" name="state"><br>
+          <br>
+      
+      
+      
+      
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  
+    <script>
+      // Function to open pop-up
+      function openPopup() {
+        document.getElementById("myPopup").style.display = "block";
+      }
+  
+      // Function to close pop-up
+      function closePopup() {
+        document.getElementById("myPopup").style.display = "none";
+      }
+    </script>
     <input type="button" class="add-cart" value="Add Cart"style="background-color:#2ed573;color:white;width: 150px;px;height:40px;font-size: 17px;"> 
 
 
