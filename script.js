@@ -143,3 +143,84 @@ function updateTotal()
 
 }
 
+function validateForm() {
+  // Get the values entered by the user
+  var name = document.forms["myForm"]["name"].value;
+  var phone = document.forms["myForm"]["phone"].value;
+  var pincode = document.forms["myForm"]["pincode"].value;
+  var address = document.forms["myForm"]["address"].value;
+  var address2 = document.forms["myForm"]["address2"].value;
+  var city = document.forms["myForm"]["city"].value;
+  var landmark = document.forms["myForm"]["landmark"].value;
+  var state = document.forms["myForm"]["state"].value;
+
+  // Validate the name field
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+
+  // Validate the phone number field
+  if (phone == "") {
+    alert("Phone number must be filled out");
+    return false;
+  }
+  if (isNaN(phone)) {
+    alert("Phone number must be numeric");
+    return false;
+  }
+  if (phone.length != 10) {
+    alert("Phone number must be 10 digits");
+    return false;
+  }
+
+  if (pincode == "") {
+    alert("pincode number must be filled out");
+    return false;
+  }
+  if (isNaN(pincode)) {
+    alert("pincode number must be numeric");
+    return false;
+  }
+  if (pincode.length != 6) {
+    alert("pincode number must be 6 digits");
+    return false;
+  }
+
+
+
+
+  // Validate the address field
+  if (address == "") {
+    alert("Address must be filled out");
+    return false;
+  }
+
+  if (address2 == "") {
+    alert("Address2 must be filled out");
+    return false;
+  }
+
+
+  if (city == "") {
+    alert("city must be filled out");
+    return false;
+  }
+
+
+  if (landmark == "") {
+    alert("landmark must be filled out");
+    return false;
+  }
+
+  if (state == "") {
+    alert("state must be filled out");
+    return false;
+  }
+
+
+
+
+  // If all fields are valid, submit the form
+  return true;
+}
