@@ -224,3 +224,4 @@ function validateForm() {
   // If all fields are valid, submit the form
   return true;
 }
+

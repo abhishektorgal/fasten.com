@@ -593,3 +593,104 @@ input[type=submit]:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.product-page {
+  display: flex;
+  justify-content: space-between;
+  
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-page .product-image {
+  width: 50%;
+  margin-right: 32px;
+}
+
+.product-page .product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-page .product-details {
+  width: 80%;
+  padding: 15% %;
+  align-items: left;
+}
+
+.product-page h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.product-page .price {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.product-page .description {
+  font-size: 1rem;
+  line-height: 1.;
+  margin-bottom: 16px;
+}
+
+.product-page form {
+  display: flex;
+  align-items: center;
+}
+
+.product-page label {
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.product-page input {
+  font-size: 1rem;
+  padding: 8px;
+  width: 50px;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.product-page button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.product-page button:hover {
+  background-color: #0069d9;
+}
+
+@media only screen and (max-width: 500px) {
+  .product-page {
+   width: 100%;
+    display: table;
+
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .product-page .product-details {
+    width: 90%;
+    
+  }
+}
+
+@media only screen and (max-width: 500px) {
+ .product-image{
+  width: 900px%;
+  height: 200px;
+ }
+}
+
