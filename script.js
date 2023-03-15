@@ -237,7 +237,7 @@ function doPost(e) {
   sheet.getRange(newRow, 1, 1, rowData.length).setValues([rowData]);
   return ContentService.createTextOutput("Data received");
 }
-	const scriptURL = ''
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbxwVXqn0N9vNYf6pE0qv4ELObibnECleCQZe9Ieln5QIM6pkv58IXb4YSYWUxm_kfom/exec'
 			const form = document.forms['contaactform']
 		  
 			form.addEventListener('submit', e => {
