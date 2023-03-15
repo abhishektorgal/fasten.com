@@ -38,50 +38,50 @@
             <span class="close" onclick="closePopup()">&times;</span>
             <h3>Buy Now </h3>
             <br>
-            <form name="myForm"  action="https://formspree.io/f/mbjekyrw"
-            method="POST" onsubmit="return validateForm()" method="post">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name"><br>
+            <form name="myForm"  action="https://script.google.com/macros/s/AKfycbzfctI8tHFIlcqYib-9d1XrHwCqNtDct3fJN36RYInsvZniMCd-10TVB2mA-R7fkVkw/exec"
+            onsubmit="return validateForm()" method="post" name="contaactform"  id="contaactform">
+            <input type="hidden" name="product" id="product" value="">
+            <input type="hidden" name="price" id="price" value="">
+            product quantity:
+            <br>
+            <input type="number"  placeholder="" name="quantity" id="quantity" value="1">
+        
+              <input type="text" id="name" placeholder="Name"name="name"><br>
               <br>
           
-              <label for="phone">Phone:</label>
-              <input type="number" id="phone" name="phone"><br>
-              <br>
-          
-          
-              <label for="pincode">pin-code:</label>
-              <input type="number" id="pincode" name="pincode"><br>
-              <br>
-          
-          
-              <label for="address">Address:</label>
-              <input type="text" id="address" name="address"><br>
-              <br>
-          
-              <label for="address2">Address2:</label>
-              <input type="text" id="address2" name="address2"><br>
-              <br>
-          
-              <label for="city">city:</label>
-              <input type="text" id="city" name="city"><br>
-              <br>
-          
-              <label for="landmark">landmark:</label>
-              <input type="text" id="landmark" name="landmark"><br>
-              <br>
-          
-              <label for="state">state:</label>
-              <input type="text" id="state" name="state"><br>
+       
+              <input type="number" id="phone" placeholder="Phone"name="phone"><br>
               <br>
           
           
+              <input type="number" id="pincode" placeholder="Pin-Code" name="pincode"><br>
+              <br>
           
           
-             <a src="index.html"><input type="submit" value="Submit"></a> 
+              <input type="text" id="address" placeholder="Address1"name="address"><br>
+              <br>
+          
+              <input type="text" id="address2" placeholder="Address2" name="address2"><br>
+              <br>
+          
+              <input type="text" id="city" placeholder="City" name="city"><br>
+              <br>
+          
+           
+              <input type="text" id="landmark" placeholder="Landmark" name="landmark"><br>
+              <br>
+          
+             
+              <input type="text" id="state" placeholder="State" name="state"><br>
+              <br>
+          
+          
+          
+          
+             <a href="#"><input type="submit" value="Submit"></a> 
             </form>
           </div>
         </div>
-      
         <script>
           // Function to open pop-up
           function openPopup() {

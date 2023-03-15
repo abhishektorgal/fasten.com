@@ -145,6 +145,7 @@ function updateTotal()
 
 function validateForm() {
   // Get the values entered by the user
+  
   var name = document.forms["myForm"]["name"].value;
   var phone = document.forms["myForm"]["phone"].value;
   var pincode = document.forms["myForm"]["pincode"].value;
@@ -225,3 +226,24 @@ function validateForm() {
   return true;
 }
 
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var newRow = sheet.getLastRow() + 1;
+  var rowData = [];
+  rowData[0] = new Date(); // Timestamp
+  for (var param in e.parameter) {
+    rowData.push(e.parameter[param]);
+  }
+  sheet.getRange(newRow, 1, 1, rowData.length).setValues([rowData]);
+  return ContentService.createTextOutput("Data received");
+}
+	const scriptURL = ''
+			const form = document.forms['contaactform']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
