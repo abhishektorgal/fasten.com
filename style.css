@@ -9,6 +9,7 @@
 
 body{
   background-color:#ffffff;
+  padding: 10px;
 }
 
 header{
@@ -466,7 +467,7 @@ body {
 
 #main {
   transition: margin-left .5s;
-  padding: 1px;
+  padding: 5px -7px;
 }
 
 .h1{
@@ -694,3 +695,46 @@ input[type=submit]:hover {
  }
 }
 
+.button {
+  display: inline-block;
+  padding: 3px 20px;
+  background-color: #dae0f1;
+  color: rgb(83, 120, 243);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 106;
+  
+
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c00;
+}
+
+.rating {
+  font-size: 18px;
+}
+
+.star {
+  color: #ffc107;
+  margin-right: px;
+}
+.mid{
+
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+.mad{
+  font-size: 30px;
+}
+
+.mab{
+  font-size: 17px;
+}
+
+.mac{ 
+  font-size: 17px;
+  font-weight: bold;
+}
