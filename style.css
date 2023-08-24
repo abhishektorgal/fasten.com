@@ -1,0 +1,449 @@
+.body{margin: 10px;
+  padding: 10px 5px;
+}
+  .header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    background-color: transparent;
+    margin: -10px;
+  }
+  
+  .logo {
+
+    font-size: 0px;
+    font-weight: bold;
+    margin-left: 12px;
+  }
+  
+  .navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 20px;
+  }
+  
+  .navigation ul li {
+    margin-right: 20px;
+  }
+  
+  .navigation ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  }
+  
+  .navigation ul li a:hover {
+    color: #ff0040;
+  }
+  
+
+
+
+body {margin-top: 80px;
+  margin-bottom: 80px;
+ }
+.icon-bar {
+    width:100%;;
+    background-color: rgb(0, 0, 0);
+    overflow: auto;
+    position: fixed;
+    bottom: 0;
+    margin: -10px;
+    
+}
+
+.icon-bar a {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 10px 0px;
+    transition: all 0.3s ease;
+    color: white;
+
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #ff0000;
+}
+.bookicon{ width: 20px; /* Adjust this value to your preference */
+    height: 20px; /* Adjust this value to your preference */
+
+   }
+@media screen and (min-width: 768px) {
+    .icon-bar {
+
+        display: none;
+    
+      }
+      
+
+  
+    }
+    
+    
+    @media screen and (max-width: 768px) {
+      
+          .navigation{
+            display: none;
+        }
+                .music-player {
+        width:  100%;  
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+  .header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    margin: -10px;
+
+  }
+
+  .logo img {
+    width: 35px;
+    height: 35px;
+    
+}
+
+
+        }
+        .header {
+          background-color: #f8f9fa;
+          position: fixed;
+          top: 0;
+          width: 100%;
+      }
+    
+  
+
+      /* Add a circular border to the logo */
+      .logo img {
+          border-radius: 100px; /* Make the image circular */
+          border: 2px solid white; /* Add a white border to the circle */
+  
+      }
+
+      /* Add a background color to the navigation links for visibility */
+      .navigation ul li a {
+          background-color: rgba(255, 255, 255, 0.5); /* Example: semi-transparent white */
+      }
+      .scrollable-menu {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+      
+        background-color: #ffffff;
+        scrollbar-width: none; /* Firefox */
+        margin: 10px;
+        -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+    }
+
+    .scrollable-menu::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+
+    .book-item {
+
+        background-color: rgba(255, 255, 255, 0);
+        margin-right: 10px;
+      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .book-image {
+        width: 130px;
+        height: 200px;
+      
+      
+    }
+
+    .book-title {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* Adjustments for a horizontal scrollbar */
+    .scrollable-menu::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .scrollable-menu::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    .scrollable-menu::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+    }
+    .heading {font-size: 26px;
+line-height: 36px;
+font-weight: bold;
+display: flex;
+align-items: center;
+margin-left: 2%;
+color: rgb(0, 0, 92);}
+
+        /* Add your CSS styles here */
+        .music-player {
+          width: 390px;  
+          background-color: #f0f0f0;
+          border-radius: 5px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      audio {
+          width: 100%;
+      }
+      .audio-time{color: rgb(0, 2, 125);
+          margin: 10px;}
+      .controls {
+          display: flex;
+          margin-top: 10px;
+          justify-content: center;
+      }
+
+      .button {
+          background-color: rgb(0, 2, 125);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+          margin: 0 3px;
+          width: 100%;
+          
+      }
+
+      .timeline {
+          width: 95%;
+          height: 5px;
+          background-color: #ccc;
+          position: relative;
+          margin-top: 10px;
+          cursor: pointer;
+          margin-left: 10px;
+      }
+
+      .progress {
+          height: 95%;
+          background-color: rgb(230, 0, 0);
+          width: 0;
+          padding: 1px;
+          align-items: ;
+      }
+
+      .speed-buttons {
+          display: flex;
+          justify-content: center;
+          margin: 10px;
+          width: 100%;
+          
+      }
+      .responsive {
+        margin-top: 10px;
+        width: 50%;
+        height: auto;
+      
+      }
+    
+ .button2{
+        background-color: rgb(0, 2, 125);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin: 0 3px;
+        width: 20%;
+        height: 30px;
+      
+        
+  }
+      
+  .left{align-items: left;}
+
+.chapters {
+    margin-top: 20px;
+}
+
+.chapters h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#chapter-list {
+    list-style: none;
+    padding: 0;
+}
+
+#chapter-list li {
+    margin-bottom: 5px;
+}
+
+.smallbutton {
+    padding: 6px 12px;
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+    width: 13%;
+
+}
+
+Web", sans-serif;
+	color: rgba(48, 69, 92, 0.8);
+}
+.accordion-menu {
+	display: inline-block;
+    position: relative;
+	left: 50%;
+	margin: 150px 0;
+	transform: translate(-50%, 0);
+	max-width: 300px;
+    padding: 10px 20px 20px;
+	border-radius: 5px;
+}
+h2 {
+	font-size: 18px;
+	line-height: 34px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	display: block;
+	margin: 0;
+    cursor: pointer;
+    color: #6c6c6a;
+}
+p {
+	color: rgba(48, 69, 92, 0.8);
+	font-size: 15px;
+	line-height: 26px;
+	letter-spacing: 1px;
+	position: relative;
+	overflow: hidden;
+	max-height: 800px;
+	opacity: 1;
+	transform: translate(0, 0);
+	margin-top: 14px;
+	z-index: 2;
+}
+ul {
+	list-style: none;
+	perspective: 900;
+	padding: 0 20px 10px;
+    margin: 0;
+    background-color: rgb(248, 248, 248);
+	border-radius: 5px;
+
+}
+ul li {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 4px;
+	padding-top: 18px;
+    border-top: 1px dotted #dce7eb;
+}
+
+ul li:nth-child(1){ border:none; }
+ul li:nth-of-type(1) { animation-delay: 0.5s; }
+ul li:nth-of-type(2) { animation-delay: 0.75s; }
+ul li:nth-of-type(3) { animation-delay: 1.0s; }
+ul li:nth-of-type(4) { animation-delay: 1.25s; }
+ul li:last-of-type { padding-bottom: 0; }
+
+ul li .arrow {
+	position: absolute;
+	transform: translate(-6px, 0);
+	margin-top: 16px;
+	right: 0;
+}
+ul li .fas{
+	color:#f6483b;
+	font-size: 15px;
+	margin-right: 10px;
+}
+ul li .arrow:before, ul li .arrow:after {
+	content: "";
+	position: absolute;
+	background-color: #f6483b;
+	width: 3px;
+	height: 9px;
+}
+ul li .arrow:before {
+	transform: translate(-2px, 0) rotate(45deg);
+}
+ul li .arrow:after {
+	transform: translate(2px, 0) rotate(-45deg);
+}
+ul li input[type=checkbox] {
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+    z-index: 1;    
+    opacity: 0;
+}
+ul li input[type=checkbox]:checked ~ p {
+	margin-top: 0;
+	max-height: 0;
+	opacity: 0;
+	transform: translate(0, 50%);
+}
+ul li input[type=checkbox]:checked ~ .arrow:before {
+	transform: translate(2px, 0) rotate(45deg);
+}
+ul li input[type=checkbox]:checked ~ .arrow:after {
+	transform: translate(-2px, 0) rotate(-45deg);
+}
+.transition, p, ul li .arrow:before, ul li .arrow:after {
+	transition: all 0.25s ease-in-out;
+}
+
+.flipIn, h1, ul li {
+	animation: flipdown 0.5s ease both;
+}
+.no-select, h2 {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	user-select: none;
+}
+@keyframes flipdown {
+	0% {
+		opacity: 0;
+		transform-origin: top center;
+		transform: rotateX(-90deg);
+	}
+
+	5% { opacity: 1; }
+
+	80% { transform: rotateX(8deg); }
+
+	83% { transform: rotateX(6deg); }
+
+	92% { transform: rotateX(-3deg); }
+
+	100% {
+		transform-origin: top center;
+		transform: rotateX(0deg);
+	}
+}
