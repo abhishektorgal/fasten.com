@@ -631,3 +631,29 @@ p {
 .cta-button:hover {
   background-color: #27ae60;
 }
+
+.booknav ul{
+
+  list-style: none;
+    margin: 0;
+    padding: ;
+    display: flex;
+    margin-right: 20px;
+    background-color: #9aae27;
+}
+
+
+.booknav ul li {
+  margin-right: 40%;
+}
+
+.booknav ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+
+}
+
+.booknav ul li a:hover {
+  color: #ff0040;
+}

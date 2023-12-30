@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rich dad poor daad audiobook by Knowrrator</title>
+    <title id="page-title">audiobook by Knowrrator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -58,6 +58,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const audioSrc = urlParams.get('audioSrc');
     const imageSrc = urlParams.get('imageSrc');
+    const audiobookTitle = urlParams.get('title'); // Add this line to get the audiobook title
 
     // Set the content dynamically
     const richContent = document.getElementById('rich-content');
@@ -75,7 +76,7 @@
     <div class="controls">
         <button id="back10" class="button"> <i class="fa-solid fa-rotate-right fa-flip-horizontal"></i></button>
         <button id="backward" class="button"><i class="fas fa-step-backward"></i></button>
-        <button id="playPause" class="playbutton"><i class="fas fa-play"></i></button>
+        <button id="playPause" class="playbutton"><i class="fas fa-pause"></i></button>
         <button id="forward" class="button"><i class="fas fa-step-forward"></i></button>
         <button id="forward10" class="button"><i class="fa-solid fa-rotate-right"></i></button>
     </div>
@@ -101,6 +102,8 @@
 
 
     `;
+       // Dynamically set the page title
+       document.getElementById('page-title').innerText = `${audiobookTitle} Audiobook by Knowrrator`;
 </script>
 <script src="js/audiocomtrolls.js"></script>
 

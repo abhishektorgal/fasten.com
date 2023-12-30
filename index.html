@@ -35,15 +35,16 @@
 <div class="scrollable-menu">
 
     <!-- Book 1 -->
-    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg')">
+    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg', 'B.R Ambedkar')">
         <p>Hello</p>
         <div class="cover">
             <center><img class="book-image" src="images/B R Ambedkar.jpg" alt="Book 1"></center>
         </div>
     </div>
+    
 
     <!-- Book 2 -->
-    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/bhagat singh.jpg')">
+    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/bhagat singh.jpg','Why I am Atheist:Bhagat Singh')">
         <p>Hello</p>
         <div class="cover">
             <center><img class="book-image" src="images/bhagat singh.jpg" alt="Book 2"></center>
@@ -83,7 +84,7 @@
                 </div>
 
                      <!-- Book 7 -->
-                     <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/sudha murty.jpg')">
+                     <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/sudha murty.jpg',)">
                         <p>Hello</p>
                         <div class="cover">
                             <center><img class="book-image" src="images/sudha murty.jpg" alt="Book 3"></center>
@@ -109,15 +110,14 @@
 
 <script>
 
-    function openRichPage(audioSrc, imageSrc) {
-        // Construct the URL for rich.html with parameters
-        const richPageUrl = `audiocontroll.html?audioSrc=${encodeURIComponent(audioSrc)}&imageSrc=${encodeURIComponent(imageSrc)}`;
+function openRichPage(audioSrc, imageSrc, title) {
+    // Construct the URL for audiocontroll.html with parameters
+    const richPageUrl = `audiocontroll.html?audioSrc=${encodeURIComponent(audioSrc)}&imageSrc=${encodeURIComponent(imageSrc)}&title=${encodeURIComponent(title)}`;
 
-        // Open rich.html in the same window
-        window.location.href = richPageUrl;
+    // Open audiocontroll.html in the same window
+    window.location.href = richPageUrl;
+}
 
-      
-    }
 
 </script>
 
