@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rich dad poor daad audiobook by Knowrrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Audiobooks.html">Audiobooks</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+      <div class="icon-bar">
+        <a class="active" href="index.html"><img src="images/home.png"> </i></a> 
+        <a href="Audiobooks.html"><img class="bookicon"src="images/book.png" alt="icon"></a> 
+        <a href="#"><img class="bookicon"src="images/compass.png"> </a> 
+        <a href="#"><img class="bookicon"src="images/library.png"> </a> 
+      </div>
+      <style>    @media screen and (max-width: 450px) {
+      
+        .navigation{
+          display: none;
+      }
+      .music-player {
+        width:  100%;  
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+      }
+      #audio {
+            display: none;
+        }</style>
+  <div class="music-player">
+    <audio id="audio" controls>
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <center><img id="album-cover" class="responsive" alt="Album Cover" width="100%"></center>
+    <div class="timeline" id="timeline">
+        <div class="progress"></div>
+    </div>
+    <div class="audio-time" id="audioTime">0:00 / 0:00</div>
+    <div class="controls">
+        <button id="back10" class="button"> <i class="fa-solid fa-rotate-right fa-flip-horizontal"></i></button>
+        <button id="backward" class="button"><i class="fas fa-step-backward"></i></button>
+        <button id="playPause" class="playbutton"><i class="fas fa-play"></i></button>
+        <button id="forward" class="button"><i class="fas fa-step-forward"></i></button>
+        <button id="forward10" class="button"><i class="fa-solid fa-rotate-right"></i></button>
+    </div>
+    <div class="speed-buttons">
+        <button id="speed-0.5" class="smallbutton">0.5x</button>
+        <button id="speed-0.75" class="smallbutton">0.75x</button>
+        <button id="speed-1" class="smallbutton">1x</button>
+        <button id="speed-1.5" class="smallbutton">1.5x</button>
+        <button id="speed-2" class="smallbutton">2x</button>
+    </div>
+    <br>
+</div>
+<br> <br> <br>
+<div class="left">
+    <div class="parts">
+   
+     
+        <br>   <br>
+       
+        <!-- Add more buttons for additional parts -->
+    </div>
+</div>
+<div class="accordion-menu">
+    <ul>
+        <li>
+            <input onclick="playPart('Rich Dad Poor Dad Introduction .mp3')"type="checkbox" checked>
+           
+            <i class="arrow"></i>
+            <h2><i class="fa-solid fa-headphones" style="color: #ff0000;"></i>      Part 1</h2>
+            <p>This UI was written in HTML and CSS.
+            </p>
+        </li>
+        <li>
+            <input onclick="playPart('South BGM.mp3')"type="checkbox" checked>
+            <i class="arrow"></i>
+            <h2><i class="fa-solid fa-headphones" style="color: #ff0000;"></i></i>      Part2</h2>
+            <p>Using the sibling and checked selectors, we can determine 
+                the styling of sibling elements based on the checked state
+                of the checkbox input element. 
+            </p>
+        </li>
+        <li>
+            <input onclick="playPart('South BGM.mp3')"type="checkbox" checked>
+            <i class="arrow"></i>
+            <h2><i class="fa-solid fa-headphones" style="color: #ff0000;"></i>      Part3</h2>
+            <p>By making the open state default for when :checked isn't 
+                detected, we can make this system accessable for browsers 
+                that don't recognize :checked.
+            </p>
+        </li>
+    </ul>
+</div>
+
+    <script>
+        // Add your JavaScript code here
+        const audio = document.getElementById('audio');
+        const playPauseButton = document.getElementById('playPause');
+        const backwardButton = document.getElementById('backward');
+        const forwardButton = document.getElementById('forward');
+        const back10Button = document.getElementById('back10');
+        const forward10Button = document.getElementById('forward10');
+        const progress = document.querySelector('.progress');
+        const timeline = document.getElementById('timeline');
+        const audioTime = document.getElementById('audioTime');
+        const speedButtons = document.querySelectorAll('.speed-buttons button');
+
+       
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            audio.pause();
+            playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+        backwardButton.addEventListener('click', () => {
+            audio.currentTime -= 5; // Go back 5 seconds
+        });
+
+        forwardButton.addEventListener('click', () => {
+            audio.currentTime += 5; // Go forward 5 seconds
+        });
+
+        back10Button.addEventListener('click', () => {
+            audio.currentTime -= 10; // Go back 10 seconds
+        });
+
+        forward10Button.addEventListener('click', () => {
+            audio.currentTime += 10; // Go forward 10 seconds
+        });
+
+        timeline.addEventListener('click', (event) => {
+            const timelineWidth = timeline.offsetWidth;
+            const clickPosition = event.offsetX;
+            const seekTime = (clickPosition / timelineWidth) * audio.duration;
+            audio.currentTime = seekTime;
+        });
+
+        speedButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const speed = parseFloat(button.textContent);
+                audio.playbackRate = speed;
+            });
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const currentTime = audio.currentTime;
+            const duration = audio.duration;
+            const progressWidth = (currentTime / duration) * 100;
+            progress.style.width = `${progressWidth}%`;
+
+            const currentMinutes = Math.floor(currentTime / 60);
+            const currentSeconds = Math.floor(currentTime % 60);
+            const durationMinutes = Math.floor(duration / 60);
+            const durationSeconds = Math.floor(duration % 60);
+
+            audioTime.textContent = `${formatTime(currentMinutes)}:${formatTime(currentSeconds)} / ${formatTime(durationMinutes)}:${formatTime(durationSeconds)}`;
+        });
+
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
+        
+        document.getElementById('backward').innerHTML = '<i class="fas fa-step-backward"></i>';
+        document.getElementById('playPause').innerHTML = '<i class="fas fa-play"></i>';
+        document.getElementById('forward').innerHTML = '<i class="fas fa-step-forward"></i>';
+        
+        function playPart(source) {
+    const audio = document.getElementById('audio');
+    audio.src = source;
+    audio.load();
+    if (audio.paused) {
+            audio.play();
+            playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            audio.pause();
+            playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    
+}
+
+
+    </script>
+</body>
+</html>

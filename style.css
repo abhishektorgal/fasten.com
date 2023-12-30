@@ -9,6 +9,7 @@
     padding: 10px 0px;
     background-color: transparent;
     margin: -10px;
+    z-index: 232;
   }
   
   .logo {
@@ -53,6 +54,7 @@ body {margin-top: 80px;
     position: fixed;
     bottom: 0;
     margin: -10px;
+    z-index: 565;
     
 }
 
@@ -73,7 +75,7 @@ body {margin-top: 80px;
 .active {
     background-color: #ff0000;
 }
-.bookicon{ width: 20px; /* Adjust this value to your preference */
+.bookicon{ width: 25%; /* Adjust this value to your preference */
     height: 20px; /* Adjust this value to your preference */
 
    }
@@ -185,12 +187,12 @@ body {margin-top: 80px;
     }
 
     .scrollable-menu::-webkit-scrollbar-thumb {
-        background: #888;
+        background: #ffffff;
         border-radius: 10px;
     }
 
     .scrollable-menu::-webkit-scrollbar-track {
-        background: #f0f0f0;
+        background: #ffffff;
         border-radius: 10px;
     }
     .heading {font-size: 26px;
@@ -312,16 +314,14 @@ color: rgb(0, 0, 92);}
 
 }
 
-Web", sans-serif;
-	color: rgba(48, 69, 92, 0.8);
-}
+
 .accordion-menu {
 	display: inline-block;
     position: relative;
 	left: 50%;
-	margin: 150px 0;
+	margin: 150 0;
 	transform: translate(-50%, 0);
-	max-width: 300px;
+	max-width: 100%;
     padding: 10px 20px 20px;
 	border-radius: 5px;
 }
@@ -513,75 +513,121 @@ ul li input[type=checkbox]:checked ~ .arrow:after {
   }
 
   .book {
-  position: relative;
-  border-radius: 10px;
-  width: 40px;
-  height: 120px;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  -webkit-transform: preserve-3d;
-  -ms-transform: preserve-3d;
-  transform: preserve-3d;
-  -webkit-perspective: 2000px;
-  perspective: 2000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: #000;
-  margin: 10px;
- padding: 40px;
+    position: relative;
+    border-radius: 10px;
+    width: 40px;
+    height: 120px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    margin: 10px;
+   padding: 40px;
+    
+    background-color: rgba(255, 255, 255, 0);
+    margin-right: 10px;
   
-  background-color: rgba(255, 255, 255, 0);
-  margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .book img{border-radius: 5px;}
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 120px;
+    height: 200px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+  
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+    z-index: -2;
+  
+  }
+/* Add some basic styling to the Splide slider */
+.splide {
+  width: 100%; /* Adjust the width as needed */
+  margin-left: 10px ;
+  margin-right: 0px ;/* Center the slider on the page */
+}
 
+/* Style for each individual slide */
+
+
+.hero-container {
+  position: relative;
+  height: 400px;
+  background: url('hero-background.jpg') center/cover no-repeat; /* Replace 'hero-background.jpg' with your image */
+  color: #000000;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-}
-.book img{border-radius: 5px;}
-.cover {
-  top: 0;
-  position: absolute;
-  background-color: lightgray;
-  width: 130px;
-  height: 200px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 0;
-  -ms-transform-origin: 0;
-  transform-origin: 0;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
+  align-items: center;
 }
 
-.book:hover .cover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotatey(-80deg);
-  -ms-transform: rotatey(-80deg);
-  transform: rotatey(-80deg);
+h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
 p {
-  font-size: 20px;
-  font-weight: bolder;
-  z-index: -2;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
 
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  text-decoration: none;
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #27ae60;
 }

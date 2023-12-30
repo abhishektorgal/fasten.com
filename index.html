@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo"> <a href="#"><img src="logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
+        <div class="logo"> <a href="#"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
         <nav class="navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -28,77 +28,106 @@
       </header>
     
       <div class="icon-bar">
-        <a class="active" href="index.html"><img src="home.png"> </i></a> 
-        <a href="Audiobooks.html"><img class="bookicon"src="book.png" alt="icon"></a> 
-        <a href="#"><img class="bookicon"src="compass.png"> </a> 
-        <a href="#"><img class="bookicon"src="library.png"> </a> 
+        <a class="active" href="index.html"><img src="images/home.png"> </i></a> 
+        <a href="Audiobooks.html"><img class="bookicon"src="images/book.png" alt="icon"></a> 
+        <a href="#"><img class="bookicon"src="images/compass.png"> </a> 
+        <a href="#"><img class="bookicon"src="images/library.png"> </a> 
       </div>
    
-</head>
-<body>
-  <div class="heading">Free Audiobook</div>
-    <div class="scrollable-menu">
-      
-   
-      <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
-        <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
-        </div>
-       </div>
-       
 
-         
-       <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
+      <div class="heading">Free Audiobook</div>
+<div class="scrollable-menu">
+
+    <!-- Book 1 -->
+    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg')">
+        <p>Hello</p>
         <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
+            <center><img class="book-image" src="images/B R Ambedkar.jpg" alt="Book 1"></center>
         </div>
-       </div>
-       
-         
-       <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book" onclick="openRichPage('South BGM.mp3', 'images/bhagat singh.jpg')">
+        <p>Hello</p>
         <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
+            <center><img class="book-image" src="images/bhagat singh.jpg" alt="Book 2"></center>
         </div>
-       </div>
-       
-       <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
+    </div>
+
+      <!-- Book 3 -->
+      <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/elon musk.jpg')">
+        <p>Hello</p>
         <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
+            <center><img class="book-image" src="images/elon musk.jpg" alt="Book 2"></center>
         </div>
-       </div>
-        
-       <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
+    </div>
+
+    <div class="book" onclick="openRichPage('South BGM.mp3', 'images/book2.jpg')">
+        <p>Hello</p>
         <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
+            <center><img class="book-image" src="images/book2.jpg" alt="Book 2"></center>
         </div>
-       </div>
-       
-    
-       <div class="book">
-        <a href="rich dad poor daad.html"><p>Hello</p></a>
+    </div>
+
+    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/bookimg.jpg')">
+        <p>Hello</p>
         <div class="cover">
-          <a href="rich dad poor daad.html" class="book-item">
-            <center><img class="book-image" src="thumb_v2447.png" alt="Book 1"> </a></center>
+            <center><img class="book-image" src="images/bookimg.jpg" alt="Book 2"></center>
         </div>
-       </div>
-       
-</div> 
+    </div>
+
+    <div class="book" onclick="openRichPage('South BGM.mp3', 'images/steave jobs.jpg')">
+        <p>Hello</p>
+        <div class="cover">
+            <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 2"></center>
+        </div>
+    </div>
+
+    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/sudha murty.jpg')">
+        <p>Hello</p>
+        <div class="cover">
+            <center><img class="book-image" src="images/sudha murty.jpg" alt="Book 2"></center>
+        </div>
+    </div>
+
+    <div class="book" onclick="openRichPage('South BGM.mp3', 'images/sudha murty2.jpg')">
+        <p>Hello</p>
+        <div class="cover">
+            <center><img class="book-image" src="images/sudha murty2.jpg" alt="Book 2"></center>
+        </div>
+    </div>
+
+    <!-- Add more books here -->
+
+</div>
+
+<script>
+  function openRichPage(audioSrc, imageSrc) {
+      // Open a new window with rich.html
+      const richPage = window.open('rich.html', '_blank');
+
+      // When the new window is loaded, dynamically set the content
+      richPage.onload = function () {
+          const audioElement = richPage.document.getElementById('audio');
+          const albumCover = richPage.document.getElementById('album-cover');
+
+          // Set audio source and album cover image
+          audioElement.src = audioSrc;
+          albumCover.src = imageSrc;
+
+          // Play the audio instantly (if possible due to browser restrictions)
+          try {
+              audioElement.play();
+          } catch (error) {
+              console.error('Error playing audio:', error);
+          }
+
+          // Notify the parent window to update its content
+          window.opener.location.reload();
+      };
+  }
+</script>
 
 
-
-        <!-- Add more book items as needed -->
-    
-        <script src="script.js"></script>
 </body>
 </html>
-
