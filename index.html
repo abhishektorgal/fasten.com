@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowrrator:Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/laoder.js" defer></script>
  
 </head>
 <body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+
     <header class="header">
-        <div class="logo"> <a href="#"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
+        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
         <nav class="navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="Audiobooks.html">Audiobooks</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="">Explore</a></li>
+            <li><a href="library.html">Library</a></li>
           </ul>
         </nav>
       </header>
@@ -31,8 +37,8 @@
 
       <div class="heading">Free Audiobook</div>
 
-
-<div class="scrollable-menu">
+  
+        <div id="bookContainer" class="scrollable-menu">
 
     <!-- Book 1 -->
     <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg', 'B.R Ambedkar')">
@@ -105,11 +111,41 @@
 
 </div>
 
-<!-- Placeholder for rich content -->
-<div id="rich-content" style="display: none;"></div>
+
 
 <script>
 
+
+// Function to shuffle an array randomly
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Function to shuffle books
+function shuffleBooks() {
+    // Get all book elements and shuffle them
+    const bookContainer = document.getElementById('bookContainer');
+    const books = Array.from(bookContainer.children);
+    shuffleArray(books);
+
+    // Clear existing content and append shuffled elements
+    bookContainer.innerHTML = ''; // Clear existing content
+
+    books.forEach(book => {
+        bookContainer.appendChild(book);
+    });
+}
+
+// Initialize loader and shuffle books when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+    initLoader();
+    shuffleBooks();
+});
+
+// Function to open rich page
 function openRichPage(audioSrc, imageSrc, title) {
     // Construct the URL for audiocontroll.html with parameters
     const richPageUrl = `audiocontroll.html?audioSrc=${encodeURIComponent(audioSrc)}&imageSrc=${encodeURIComponent(imageSrc)}&title=${encodeURIComponent(title)}`;
@@ -120,6 +156,7 @@ function openRichPage(audioSrc, imageSrc, title) {
 
 
 </script>
+
 
 
 </body>
