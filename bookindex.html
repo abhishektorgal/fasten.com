@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowrrator:Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/laoder.js" defer></script>
  
 </head>
 <body>
+   
+
+
     <header class="header">
-        <div class="logo"> <a href="#"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
+        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
         <nav class="navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="Audiobooks.html">Audiobooks</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="">Explore</a></li>
+            <li><a href="library.html">Library</a></li>
           </ul>
         </nav>
       </header>
@@ -28,65 +32,69 @@
         <a href="#"><img class="bookicon"src="images/library.png"> </a> 
       </div>
    
-    <!-- Your website content goes here -->
-    
-    <!-- Audio player -->
-    <div id="audio-player-container">
-        <audio controls id="audio-player">
+
+    <div id="audio-player" class="sticky-bar">
+        <!-- Audio player controls go here -->
+        <audio controls>
             <source src="Rich Dad Poor Dad Introduction .mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
+            Your browser does not support the audio element.
         </audio>
     </div>
-    <style>body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    #audio-player-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-    }
-    
-    #audio-player {
-        width: 100%;
-    }
-    </style>
-    <script>// If you want the player to continue playing between page loads,
-        // you may need to use cookies or local storage to store the player state.
-        // Here, I'm using localStorage as an example.
-        
-        document.addEventListener("DOMContentLoaded", function () {
-    const audioPlayer = document.getElementById("audio-player");
 
-    // Check if there's a saved playback time in local storage
-    const savedPlaybackTime = localStorage.getItem("audioPlayerPlaybackTime");
-    if (savedPlaybackTime) {
-        audioPlayer.currentTime = parseFloat(savedPlaybackTime);
+    <div id="content">
+        <!-- Your webpage content goes here -->
+    </div>
+<style>body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+    transition: height 0.3s ease;
+}
+
+.sticky-bar.expanded {
+    height: 200px; /* Set the desired height when expanded */
+}
+
+#content {
+    margin-bottom: 220px; /* Adjust margin to accommodate the expanded player */
+}
+</style>
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const audioPlayer = document.getElementById('audio-player');
+
+    // Function to toggle the player size on click
+    function togglePlayerSize() {
+        audioPlayer.classList.toggle('expanded');
     }
 
-    // Save playback time to local storage when it changes
-    audioPlayer.addEventListener("timeupdate", function () {
-        localStorage.setItem("audioPlayerPlaybackTime", audioPlayer.currentTime.toString());
+    // Event listener for player click
+    audioPlayer.addEventListener('click', togglePlayerSize);
+
+    // Event listener for scrolling
+    window.addEventListener('scroll', function () {
+        if (audioPlayer.classList.contains('expanded')) {
+            audioPlayer.classList.remove('expanded');
+        }
     });
 
-    // Check if there's a saved volume in local storage
-    const savedVolume = localStorage.getItem("audioPlayerVolume");
-    if (savedVolume) {
-        audioPlayer.volume = parseFloat(savedVolume);
-    }
-
-    // Save volume to local storage when it changes
-    audioPlayer.addEventListener("volumechange", function () {
-        localStorage.setItem("audioPlayerVolume", audioPlayer.volume.toString());
+    // Event listener for switching tabs
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden' && audioPlayer.classList.contains('expanded')) {
+            audioPlayer.classList.remove('expanded');
+        }
     });
 });
-
-        </script>
+</script>
 </body>
 </html>

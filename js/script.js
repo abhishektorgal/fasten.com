@@ -30,7 +30,7 @@
 
     function openRichPage(audioSrc, imageSrc) {
         // Open a new window with rich.html
-        const richPage = window.open('rich.html', '_blank');
+        const richPage = window.open('audiocontroll.html', '_blank');
 
         // When the new window is loaded, dynamically set the content
         richPage.onload = function () {

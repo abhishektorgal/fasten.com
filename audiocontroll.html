@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,23 +18,13 @@
 <body>
    
     <header class="header">
-        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
-        <nav class="navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Audiobooks.html">Audiobooks</a></li>
-            <li><a href="">Explore</a></li>
-            <li><a href="library.html">Library</a></li>
-          </ul>
-        </nav>
+        <div id="back-btn" onclick="goBack()" style="width: 40px; height: 40px;">
+            <i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i>
+        </div>
+      
       </header>
     
-      <div class="icon-bar">
-        <a class="active" href="index.html"><img src="images/home.png"> </i></a> 
-        <a href="Audiobooks.html"><img class="bookicon"src="images/book.png" alt="icon"></a> 
-        <a href="#"><img class="bookicon"src="images/compass.png"> </a> 
-        <a href="#"><img class="bookicon"src="images/library.png"> </a> 
-      </div>
+   
    
     <style>    @media screen and (max-width: 450px) {
       
@@ -43,7 +33,7 @@
       }
       .music-player {
         width:  100%;  
-        background-color: #f0f0f0;
+        background-color: #ffffff;
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     }
@@ -56,6 +46,10 @@
 <div id="rich-content"></div>
 <h1 id="BookName"></h1>
 
+
+</div>
+</div>
+
 <script>
     
     // Get the audio source and album cover image source from the URL parameters
@@ -64,9 +58,12 @@
     const imageSrc = urlParams.get('imageSrc');
     const audiobookTitle = urlParams.get('title'); // Add this line to get the audiobook title
     const BookName = urlParams.get('BookName');
+    const partInfo = urlParams.get('partInfo'); // Add this line to get the "Part" information
     // Set the content dynamically
     const richContent = document.getElementById('rich-content');
     richContent.innerHTML = `
+
+    <div id="container" class="container">
     <div class="music-player">
     <audio id="audio" controls>
         <source src="${audioSrc}" type="audio/mp3">
@@ -93,23 +90,23 @@
     </div>
     <br>
 </div>
-<br> <br> <br>
-<div class="left">
-    <div class="parts">
-   
-     
-        <br>   <br>
-       
-        <!-- Add more buttons for additional parts -->
-    </div>
-</div>
+<div>
+
 
 
     `;
     
+    // Function to show the selected part
+    function showPart(part) {
+        // You can add logic here to handle the selected part (e.g., display content, navigate, etc.)
+        console.log(`Selected Part: ${part}`);
+    }
     
        // Dynamically set the page title
        document.getElementById('page-title').innerText = `${audiobookTitle} Audiobook by Knowrrator`;
+       function goBack() {
+            window.history.back();
+        }
 </script>
 <script src="js/audiocomtrolls.js"></script>
 

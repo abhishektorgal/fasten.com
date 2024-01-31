@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowrrator:Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/laoder.js" defer></script>
  
 </head>
 <body>
-    <div class="preloader">
-        <div class="spinner"></div>
-    </div>
-
+  
 
     <header class="header">
         <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
@@ -27,35 +25,102 @@
         </nav>
       </header>
     
-      <div class="icon-bar">
-        <a class="active" href="index.html"><img src="images/home.png"> </i></a> 
-        <a href="Audiobooks.html"><img class="bookicon"src="images/book.png" alt="icon"></a> 
-        <a href="#"><img class="bookicon"src="images/compass.png"> </a> 
-        <a href="#"><img class="bookicon"src="images/library.png"> </a> 
-      </div>
-   
+
+<nav class="nav">
+    <a href="index.html" class="nav__link nav__link--active">
+      <i class="material-icons nav__icon">home</i>
+      <span class="nav__text">Home</span>
+    </a>
+    <a href="Audiobooks.html" class="nav__link">
+      <i class="material-icons nav__icon">book</i>
+      <span class="nav__text">Profile</span>
+    </a>
+    <a href="#" class="nav__link">
+      <i class="material-icons nav__icon">explore</i>
+      <span class="nav__text">Devices</span>
+    </a>
+    <a href="#" class="nav__link">
+      <i class="material-icons nav__icon">lock</i>
+      <span class="nav__text">Privacy</span>
+    </a>
+    <a href="#" class="nav__link">
+      <i class="material-icons nav__icon">settings</i>
+      <span class="nav__text">Settings</span>
+    </a>
+  </nav>
+
 
       <div class="heading">Free Audiobook</div>
 
-  
+      <style>
+        .book {
+            position: relative;
+            cursor: pointer;
+        }
+    
+        .book-details {
+            text-align: center;
+        }
+    
+        .book-title {
+            font-size: 13px; /* Adjust the font size for the book title */
+            font-weight: bold;
+            margin-bottom: 5rem;
+            margin-left: 1.5rem;
+        }
+    
+        .author-name {
+            font-size: 10px; /* Adjust the font size for the author name */
+            color: #000000; /* Adjust the color of the author name */
+            margin-bottom: 1.5rem;
+   
+         
+        }
+
+    
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px; /* Adjust the font size for the play icon */
+            color: #fff; /* Adjust the color of the play icon */
+            background-color: #ffd000; /* Adjust the background color of the play icon */
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+    
+        .book:hover .play-icon {
+            background-color: #2980b9; /* Adjust the background color on hover */
+        }
+    </style>
         <div id="bookContainer" class="scrollable-menu">
 
-    <!-- Book 1 -->
-    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg', 'B.R Ambedkar')">
-        <p>Hello</p>
-        <div class="cover">
-            <center><img class="book-image" src="images/B R Ambedkar.jpg" alt="Book 1"></center>
-        </div>
-    </div>
+            <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/B R Ambedkar.jpg', 'B.R Ambedkar')">
+                <p class="play-icon">&#9654;</p>
+                <p>Hello</p>
+                <div class="cover">
+                    <center>
+                        <img class="book-image" src="images/B R Ambedkar.jpg" alt="Book 1">
+                    </center>
+                </div>
+                <div class="book-details">
+                    <p class="book-title">India <br> and Communism</p>
+                    <p class="author-name">By <br>B.R Ambedkar</p>
+                </div>
+            </div>
+    
     
 
     <!-- Book 2 -->
-    <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/bhagat singh.jpg','Why I am Atheist:Bhagat Singh')">
+    <div class="book" onclick="openRichPage('South BGM.mp3', 'images/bhagat singh.jpg','Why I am Atheist:Bhagat Singh', 'Rich Dad Poor Dad Introduction .mp3')">
         <p>Hello</p>
         <div class="cover">
             <center><img class="book-image" src="images/bhagat singh.jpg" alt="Book 2"></center>
         </div>
     </div>
+    
 
        <!-- Book 3 -->
        <div class="book" onclick="openRichPage('Rich Dad Poor Dad Introduction .mp3', 'images/bookimg.jpg')">
@@ -153,6 +218,7 @@ function openRichPage(audioSrc, imageSrc, title) {
     // Open audiocontroll.html in the same window
     window.location.href = richPageUrl;
 }
+
 
 
 </script>
