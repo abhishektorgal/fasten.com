@@ -1,6 +1,8 @@
-.body{margin: 10px;
-
+body {
+  margin-top: 200px;
+ margin: 0px;
 }
+
   .header {
 
     display: flex;
