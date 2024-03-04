@@ -710,10 +710,7 @@ p {
   transition: 0.4s;
 }
 @media screen and (max-width: 768px) {
-  body {
-   
-  }
-
+ 
   .nav {
     position: fixed;
     bottom: 0;
@@ -763,3 +760,4 @@ p {
   font-size: 30px; /* Adjust the font size as needed */
   color: #333;
   cursor: pointer;
+}

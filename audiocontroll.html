@@ -16,7 +16,9 @@
 </head>
 <body>
   <header class="header">
-
+    <div id="back-btn" onclick="goBack()" style="width: 40px; height: 40px;">
+        <i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i>
+    </div>
    
   </header>
 
@@ -63,8 +65,7 @@
       height: 100%;
       width: 100%;
       font-family: "Roboto", "Arial", sans-serif;
-         background: url(https://www.toptal.com/designers/subtlepatterns/patterns/herringbone.png);
-     
+      background: url(https://www.toptal.com/designers/subtlepatterns/patterns/herringbone.png);
     }
     
     #ripple-effect-list,
@@ -739,7 +740,7 @@ function showPart(part) {
     chapters: [
   {
     name: "Preface",
-    link: "Rich Dad Poor Dad Introduction .mp3", // Replace with the actual audio source link
+    link: "${audioSrc}", // Replace with the actual audio source link
     reader: "Mark Nelson",
     duration: "00:05:38"
   },
