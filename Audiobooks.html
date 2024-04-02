@@ -1,64 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Player with Auto-sync Subtitles</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowrrator: Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/loader.js" defer></script>
+
+    <script>
+        // Function to shuffle an array randomly
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Function to shuffle books
+        function shuffleBooks() {
+            // Get all book elements and shuffle them
+            const bookContainer = document.getElementById('bookContainer');
+            const books = Array.from(bookContainer.children);
+            shuffleArray(books);
+
+            // Clear existing content and append shuffled elements
+            bookContainer.innerHTML = ''; // Clear existing content
+
+            books.forEach(book => {
+                bookContainer.appendChild(book);
+            });
+        }
+
+        // Initialize loader and shuffle books when DOM is ready
+        document.addEventListener("DOMContentLoaded", function () {
+            initLoader();
+            shuffleBooks();
+        });
+
+        // Function to filter books based on search input
+        function filterBooks() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const books = document.querySelectorAll('.book');
+
+            books.forEach(book => {
+                const title = book.getAttribute('data-title').toLowerCase();
+                const author = book.getAttribute('data-author').toLowerCase();
+
+                if (title.includes(searchInput) || author.includes(searchInput)) {
+                    book.style.display = 'block';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+     
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+       
+     
+    </style>
 </head>
 <body>
-  <div id="player-container">
-    <audio id="audio-player" controls>
-      <source src="10bears.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <div id="subtitle-container">
-      <p id="subtitle"></p>
+
+<header class="header">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"></a>
     </div>
-  </div>
-<style>#player-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
+    <!-- Add the search input field -->
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search by book title or author" oninput="filterBooks()">
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Audiobooks.html">Audiobooks</a></li>
+            <li><a href="bookindex.html">Explore</a></li>
+            <li><a href="library.html">Library</a></li>
+        </ul>
+    </nav>
+</header>
 
-#subtitle-container {
-  margin-top: 20px;
-}
+<div class="container">
+    <div id="bookContainer" >
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
 
-#subtitle {
-  font-size: 18px;
-  font-family: Arial, sans-serif;
-  color: #333;
-}
-</style>
-  <script>document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('audio-player');
-    const subtitle = document.getElementById('subtitle');
-  
-    // Define subtitle cues with start and end times
-    const subtitles = [
-      { start: 0, end: 0.125, text: 'Subtitle line 1' },
-      { start: 0.125, end: 0.485, text: 'There were' },
-      { start: 0.485, end: 1.685, text: '10 in his bed' },
-      { start: 1.685, end: 2.245, text: 'and the little' },
-      { start: 2.245, end: 2.985, text: 'one said' },
-      { start: 2.985, end: 5.405, text: 'Roll over!' },
-      // Add more subtitles as needed
-    ];
-  
-    // Update subtitle text based on current audio time
-    audio.addEventListener('timeupdate', function() {
-      const currentTime = audio.currentTime;
-      const currentSubtitle = subtitles.find(sub => currentTime >= sub.start && currentTime <= sub.end);
-      if (currentSubtitle) {
-        subtitle.textContent = currentSubtitle.text;
-      } else {
-        subtitle.textContent = '';
-      }
-    });
-  });
-  
-  </script>
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+
+        <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div> <div id="column" class="book" data-title="rich" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/bookimg.jpg" alt="Rich Dad Poor Dad"></center>
+            </a>
+        </div>
+
+           <div id="column" class="book" data-title="elon musk" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+           
+        <div id="column" class="book" data-title="sudha" data-author="Robert T. Kiyosaki">
+            <a href="Audiobooks/richdadpoordad/1.html">
+                <center><img class="book-image" src="images/steave jobs.jpg" alt="Book 3"></center>
+            </a>
+        </div>
+
+    
+      </div>
+</div>
+
 </body>
 </html>
