@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowrrator:Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="js/laoder.js" defer></script>
+ 
+</head>
+<body>
+  
+
+    <header class="header">
+        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="Knowrrator Logo" width="50" height="50"> </a> </div>
+         <!-- Add the search input field -->
+       <div class="search">
+        
+       
+     </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Audiobooks.html">Audiobooks</a></li>
+            <li><a href="bookindex.html">Explore</a></li>
+            <li><a href="library.html">Library</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+
+<nav class="nav">
+    <a href="index.html" class="nav__link nav__link--active">
+        <i class="fa-solid fa-house"></i>
+      <span class="nav__text">Home</span>
+    </a>
+    <a href="Audiobooks.html" class="nav__link">
+        <i class="fa-solid fa-podcast"></i>
+      <span class="nav__text">Profile</span>
+    </a>
+    <a href="#" class="nav__link">
+        <i class="fa-solid fa-circle-plus"></i>
+      
+    </a>
+    <a href="bookindex.html" class="nav__link">
+        <i class="fa-solid fa-bookmark" style="color: #000000;"></i>
+      <span class="nav__text">bookmark</span>
+    </a>
+    <a href="#" class="nav__link">
+        <i class="fa-solid fa-user"></i>
+      <span class="nav__text">You</span>
+    </a>
+  </nav>
+
+
+    
+    <div class="filter-container" >
+      <button class="filter-btn active" onclick="filterBooks('all')">All</button>
+      <button class="filter-btn" onclick="filterBooks('fiction')">Fiction</button>
+      <button class="filter-btn" onclick="filterBooks('non-iction')">Non-fiction</button>
+      <button class="filter-btn" onclick="filterBooks('fantasy')">Fantasy</button>
+      <button class="filter-btn" onclick="filterBooks('sci-fi')">Sci-Fi</button>
+      <button class="filter-btn" onclick="filterBooks('mystery')">Mystery</button>
+      <button class="filter-btn" onclick="filterBooks('romance')">Romance</button>
+      <button class="filter-btn" onclick="filterBooks('biography')">Biography</button>
+      <button class="filter-btn" onclick="filterBooks('self-help')">Self-Help</button>
+      <button class="filter-btn" onclick="filterBooks('history')">History</button>
+      <!-- Add more filter buttons as needed -->
+    </div>
+    
+    <div id="bookContainer" class="scrollable-menu">
+      <!-- Audiobook list goes here -->
+      <a href="Audiobooks\richdadpoordad\1.html">
+        <div class="book" data-category="fiction">
+          <center><img class="book-image" src="images/bookimg.jpg" alt="Book 3"></center>
+       </div>
+      </a>
+
+      <a href="Audiobooks\richdadpoordad\1.html">
+        <div class="book" data-category="biography">
+          <center><img class="book-image" src="images/elon musk.jpg" alt="Book 3"></center>
+       </div>
+      </a>
+      <!-- Add more book entries with appropriate data-category attributes -->
+    </div>
+    
+
+
+
+<script>
+
+
+
+// Function to shuffle an array randomly
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Function to shuffle books
+function shuffleBooks() {
+    // Get all book elements and shuffle them
+    const bookContainer = document.getElementById('bookContainer');
+    const books = Array.from(bookContainer.children);
+    shuffleArray(books);
+
+    // Clear existing content and append shuffled elements
+    bookContainer.innerHTML = ''; // Clear existing content
+
+    books.forEach(book => {
+        bookContainer.appendChild(book);
+    });
+}
+
+// Initialize loader and shuffle books when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+    initLoader();
+    shuffleBooks();
+});
+
+// Function to open rich page
+function openRichPage(audioSrc, imageSrc, title) {
+    // Construct the URL for audiocontroll.html with parameters
+    const richPageUrl = `audiocontroll.html?audioSrc=${encodeURIComponent(audioSrc)}&imageSrc=${encodeURIComponent(imageSrc)}&title=${encodeURIComponent(title)}`;
+
+    // Open audiocontroll.html in the same window
+    window.location.href = richPageUrl;
+}
+    // Function to filter books based on search input
+
+        function filterBooks(category) {
+    var books = document.querySelectorAll('#bookContainer .book');
+
+    for (var i = 0; i < books.length; i++) {
+      var book = books[i];
+
+      // Show all books if category is "all"
+      if (category === 'all') {
+        book.style.display = 'block';
+      } else {
+        // Hide books that don't belong to the selected category
+        if (book.getAttribute('data-category') === category) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      }
+    }
+
+    // Update active filter button
+    var filterBtns = document.getElementsByClassName('filter-btn');
+    for (var i = 0; i < filterBtns.length; i++) {
+      if (filterBtns[i].getAttribute('onclick').includes(category)) {
+        filterBtns[i].classList.add('active');
+      } else {
+        filterBtns[i].classList.remove('active');
+      }
+    }
+  }
+
+</script>
+
+
+
+</body>
+</html>

@@ -183,13 +183,23 @@ body {margin-top: 80px;
     }
 
     .book-title {
-        margin-top: 10px;
-        text-align: center;
-        font-weight: bold;
+        text-align: left;
+        font-size: 18px;
+        color: #11195e;
+        
     }
+    .book-author {
+      text-align: left;
+      color: #000000;
+      font-size: 15px;
+      font-weight: 100;
+
+      
+  }
     
 .scrollable-menu{
   gap:1rem;
+  padding-top: 20px;
 }
     /* Adjustments for a horizontal scrollbar */
     .scrollable-menu::-webkit-scrollbar {
@@ -197,9 +207,13 @@ body {margin-top: 80px;
     }
 
     .scrollable-menu::-webkit-scrollbar-thumb {
-        background: #cccccc;
+        background: #ffffff;
         border-radius: 10px;
     }
+    .scrollable-menu::-webkit-scrollbar-thumb:hover {
+      background: #cccccc;
+      border-radius: 10px;
+  }
 
     .scrollable-menu::-webkit-scrollbar-track {
         background: #ffffff;
@@ -224,7 +238,7 @@ color: rgb(0, 0, 92);}
     align-items: center;
     justify-content: center;
   }
-  .book img{border-radius: 0px 5px 5px 0px;}
+  .book img{border-radius: 2px 10px 10px 2px;}
 
 
 @media screen and (max-width: 768px) {
@@ -317,3 +331,56 @@ color: rgb(0, 0, 92);}
     width: 100%;
      
   }
+    /* Styles for the filter container */
+    .filter-container {
+      background-color: #ffffff;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin: 12px;
+      padding-bottom: 1px;
+    }
+
+    /* Styles for the filter buttons */
+    .filter-btn {
+      display: inline-block;
+      padding: 5px 10px; /* Adjusted padding */
+      height: auto; /* Removed fixed height */
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Styles for active filter button */
+    .filter-btn.active {
+      background-color: #555;
+      color: white;
+    }
+
+    
+        /* Adjustments for a horizontal scrollbar */
+        .filter-container::-webkit-scrollbar {
+            height: 8px;
+            
+        }
+    
+        .filter-container::-webkit-scrollbar-thumb {
+            background: #ffffff;
+            border-radius: 10px;
+            
+        }
+        .filter-container::-webkit-scrollbar-thumb:hover {
+          background: #d3d3d3;
+          
+          
+      }
+    
+        .filter-container::-webkit-scrollbar-track {
+            background: #ffffff;
+            border-radius: 10px;
+        }
+   
+
+    /* Styles for individual books */
+  
+   
