@@ -382,8 +382,8 @@ color: rgb(0, 0, 92);}
     /* Styles for individual books */
   
     .book {
-      width: 150px;
-    height: 230px;
+      width: 130px;
+    height: 200px;
       position: relative;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 1.1px 1.5px,
         rgba(0, 0, 0, 0.1) 0px 2.8px 3.9px, rgba(0, 0, 0, 0.08) 0px 5.8px 7.9px,
@@ -393,8 +393,8 @@ color: rgb(0, 0, 92);}
     }
     
     .book img {
-      width: 150px;
-    height: 230px;
+      width: 130px;
+    height: 200px;
       display: block;
       object-fit: cover;
     }
